@@ -185,6 +185,9 @@ def _backend():
     if system == "Windows":
         from . import windows
         return windows
+    if system == "Linux":
+        from . import linux
+        return linux
     raise CaptureError(
         f"no capture backend for {system}. The trigger, matcher and player are "
         f"portable, but grabbing another window's pixels is not — see "
